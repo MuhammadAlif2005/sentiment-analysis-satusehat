@@ -1,63 +1,256 @@
-/* ===== Dasar halaman ===== */
-.block-container { padding-top: 2rem; padding-bottom: 2rem; max-width: 1200px; }
-h5 { margin: 0 0 .6rem 0; font-weight: 700; color: #111827; }
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap');
 
-/* ===== Header ===== */
-.hero {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    color: #ffffff;
-    padding: 1.6rem 1.8rem;
-    border-radius: 20px;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 10px 25px rgba(79, 70, 229, .25);
-}
-.hero-title { font-size: 1.7rem; font-weight: 800; line-height: 1.2; }
-.hero-sub { margin-top: .4rem; font-size: .95rem; opacity: .9; }
-
-/* ===== Kartu bento (container bertepi) ===== */
-[data-testid="stVerticalBlockBorderWrapper"] {
-    background: #ffffff;
-    border: 1px solid #e5e7eb !important;
-    border-radius: 18px !important;
-    box-shadow: 0 2px 10px rgba(17, 24, 39, .05);
+/* ============ Token desain ============ */
+:root {
+    --primary: #0E7490;
+    --primary-dark: #0B5A71;
+    --primary-soft: #E0F2F7;
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --border: #E2E8F0;
+    --ink: #0F172A;
+    --ink-2: #334155;
+    --muted: #64748B;
+    --radius: 12px;
 }
 
-/* ===== Kartu KPI ===== */
-.kpi {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-left: 6px solid var(--accent, #4f46e5);
-    border-radius: 16px;
-    padding: 1rem 1.2rem;
-    box-shadow: 0 2px 10px rgba(17, 24, 39, .05);
+/* ============ Dasar halaman ============ */
+.stApp {
+    background: var(--bg);
+    color: var(--ink);
 }
-.kpi-label { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: #6b7280; font-weight: 600; }
-.kpi-value { font-size: 2rem; font-weight: 800; color: #111827; line-height: 1.25; }
-.kpi-sub { font-size: .85rem; color: #6b7280; }
+.stApp, .stApp p, .stApp label, .stApp li, .stApp input, .stApp textarea,
+.stApp button, .stApp h1, .stApp h2, .stApp h3,
+.stApp [data-testid="stMarkdownContainer"], .stApp [data-testid="stTab"] {
+    font-family: 'Fira Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+[data-testid="stHeader"] { background: transparent; }
+#MainMenu, footer { visibility: hidden; }
 
-/* ===== Lencana dan kutipan ulasan ===== */
-.badge {
-    display: inline-block;
-    color: #ffffff;
-    font-size: .72rem;
-    font-weight: 700;
-    letter-spacing: .06em;
-    padding: .2rem .7rem;
-    border-radius: 999px;
+.block-container {
+    max-width: 1180px;
+    padding: 2.4rem 2rem 3rem;
+}
+
+/* ============ Header ============ */
+.page-header {
+    padding: 0 0 1.1rem;
     margin-bottom: .6rem;
+    border-bottom: 1px solid var(--border);
 }
-.quote {
-    background: #f9fafb;
-    border-left: 3px solid #d1d5db;
+.page-header .page-title {
+    font-size: 1.55rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -.01em;
+    color: var(--ink);
+    margin: 0;
+    padding: 0;
+}
+.page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 16px;
+    margin-top: .55rem;
+    font-size: .85rem;
+    color: var(--muted);
+}
+.page-meta span + span::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #94A3B8;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+
+/* ============ Tab sebagai navigasi ============ */
+[data-baseweb="tab-list"] {
+    gap: 2px;
+    border-bottom: 1px solid var(--border);
+}
+button[data-baseweb="tab"] {
+    padding: .75rem 1rem;
+    background: transparent;
+    color: var(--muted);
+    font-weight: 500;
+    cursor: pointer;
+    transition: color .15s ease;
+}
+button[data-baseweb="tab"]:hover { color: var(--ink); }
+button[data-baseweb="tab"][aria-selected="true"] { color: var(--primary); }
+[data-baseweb="tab-highlight"] { background-color: var(--primary); height: 2px; }
+[data-baseweb="tab-border"] { display: none; }
+
+/* ============ Judul bagian ============ */
+.section-title {
+    margin: 1.4rem 0 .1rem;
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* ============ Kartu (container bertepi) ============ */
+[class*="st-key-card-"],
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: var(--surface);
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: none;
+}
+[class*="st-key-card-"] { padding: 1.1rem 1.25rem; }
+
+.card-title {
+    font-size: .98rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+.card-sub {
+    margin: 2px 0 12px;
+    font-size: .82rem;
+    color: var(--muted);
+}
+
+/* ============ Kartu KPI ============ */
+.kpi {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+.kpi-icon {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.kpi-body { min-width: 0; }
+.kpi-label { font-size: .82rem; font-weight: 500; color: var(--muted); }
+.kpi-value {
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+}
+.kpi-sub { font-size: .78rem; color: var(--muted); }
+
+/* ============ Daftar kata, ulasan, chip ============ */
+.rank {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: .92rem;
+    color: var(--ink-2);
+}
+.rank:last-child { border-bottom: 0; }
+.rank-no {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+    font-size: .74rem;
+    font-weight: 600;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: .35rem;
+    font-size: .82rem;
+    font-weight: 600;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+
+.review {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: .86rem;
+    line-height: 1.5;
+    color: var(--ink-2);
+}
+.review:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.chip {
+    display: inline-block;
+    margin: 0 6px 6px 0;
+    padding: 3px 11px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+    font-size: .86rem;
+    font-weight: 500;
+}
+
+.note { font-size: .82rem; color: var(--muted); margin: .4rem 0; }
+
+/* ============ Kontrol input ============ */
+.stButton > button[kind="primary"] {
+    background: var(--primary);
+    border: 1px solid var(--primary);
     border-radius: 8px;
-    padding: .5rem .7rem;
-    margin-bottom: .5rem;
-    font-size: .88rem;
-    color: #374151;
+    font-weight: 500;
+    transition: background .15s ease;
+}
+.stButton > button[kind="primary"]:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+.stDownloadButton > button {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-weight: 500;
+    background: var(--surface);
+    color: var(--ink-2);
+}
+.stDownloadButton > button:hover { border-color: var(--primary); color: var(--primary); }
+
+[data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div {
+    border-radius: 8px;
+}
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* ===== Tab ===== */
-button[data-baseweb="tab"] { font-weight: 600; }
+/* ============ Aksesibilitas ============ */
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+}
 
-/* ===== Footer ===== */
-.footer { text-align: center; color: #9ca3af; font-size: .8rem; margin-top: 2rem; }
+/* ============ Footer ============ */
+.footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: .8rem;
+    color: var(--muted);
+}
+
+/* ============ Responsif ============ */
+@media (max-width: 768px) {
+    .block-container { padding: 1.2rem 1rem 2rem; }
+    .page-header .page-title { font-size: 1.25rem; }
+    .kpi-value { font-size: 1.4rem; }
+    button[data-baseweb="tab"] { padding: .6rem .7rem; }
+}
