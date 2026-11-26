@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+matplotlib
+wordcloud
+PySastrawi
+scikit-learn==1.6.1
+joblib==1.6.0

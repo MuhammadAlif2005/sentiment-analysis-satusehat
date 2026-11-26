@@ -1,0 +1,38 @@
+{
+  "negatif": [
+    "tidak",
+    "bikin",
+    "login",
+    "gabisa",
+    "daftar",
+    "jelek",
+    "salah",
+    "pin",
+    "sampah",
+    "muter"
+  ],
+  "netral": [
+    "tampilan",
+    "mengunduh",
+    "susahnya",
+    "fitur",
+    "aplikasinya bagus",
+    "mahal",
+    "tingkatkan",
+    "kesalahan",
+    "jakarta",
+    "gitu"
+  ],
+  "positif": [
+    "mudah",
+    "kesehatan",
+    "bagus",
+    "bermanfaat",
+    "pelayanan",
+    "mantap",
+    "terimakasih",
+    "keren",
+    "semoga",
+    "good"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "app_id": "com.telkom.tracencare",
+  "jumlah_ulasan": 2536,
+  "distribusi_label": {
+    "negatif": 1547,
+    "positif": 866,
+    "netral": 123
+  },
+  "akurasi": 0.8090551181102362,
+  "f1_macro": 0.6315159125926821,
+  "laporan": {
+    "negatif": {
+      "precision": 0.8705501618122977,
+      "recall": 0.867741935483871,
+      "f1-score": 0.8691437802907916,
+      "support": 310.0
+    },
+    "netral": {
+      "precision": 0.15217391304347827,
+      "recall": 0.28,
+      "f1-score": 0.19718309859154928,
+      "support": 25.0
+    },
+    "positif": {
+      "precision": 0.8823529411764706,
+      "recall": 0.7803468208092486,
+      "f1-score": 0.8282208588957055,
+      "support": 173.0
+    },
+    "accuracy": 0.8090551181102362,
+    "macro avg": {
+      "precision": 0.6350256720107489,
+      "recall": 0.6426962520977065,
+      "f1-score": 0.6315159125926821,
+      "support": 508.0
+    },
+    "weighted avg": {
+      "precision": 0.8392164504161982,
+      "recall": 0.8090551181102362,
+      "f1-score": 0.8221384998895496,
+      "support": 508.0
+    }
+  },
+  "versi_sklearn": "1.6.1",
+  "tanggal": "2026-11-26"
+}

@@ -1,0 +1,4 @@
+Model,Akurasi,F1 macro
+Logistic Regression,0.8091,0.6315
+Linear SVM,0.8484,0.6139
+Naive Bayes,0.8543,0.576
